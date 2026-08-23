@@ -1,21 +1,18 @@
-import java.util.Arrays;
-
 class Solution {
     public void moveZeroes(int[] nums) {
 
-        int state = 0;
+        int track = 0;
 
-        for (int i=0; i<nums.length; i++) {
+        for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
-                nums[state] = nums[i];
-                state++;
+                nums[track] = nums[i];
+                track++;
             }
         }
 
-        while (state < nums.length) {
-            nums[state] = 0;
-            state++;
+        while (track < nums.length) {
+            nums[track] = 0;
+            track++;
         }
-        System.out.println(Arrays.toString(nums));
     }
 }
